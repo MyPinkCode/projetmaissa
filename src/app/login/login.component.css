@@ -1,0 +1,40 @@
+h3{
+    text-align:center;
+ }
+ 
+ #d{
+     margin-top: 3%;
+     margin-left: 30%;
+     width: 40%;
+     height: 340px;
+     /*border: 1px solid black;*/
+     padding: 15px;
+     border-radius: 25px;
+     background-color:#343a40;  ; 
+ }
+ 
+ hr{
+     width: 40% ;
+     color: black;
+ }
+ 
+ input.ng-valid { border-left: 4px solid green; }
+ input.ng-invalid { border-left: 4px solid red; }
+ 
+ button{
+     margin-left:20px;
+ }
+ 
+ #d3{
+     margin-left: 140px;
+ }
+ 
+ input{
+    
+     border-radius: 15px;
+ }
+ 
+ label{
+     color:white;
+ }
+ 

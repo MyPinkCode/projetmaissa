@@ -1,0 +1,27 @@
+<h3>Suppression d'un produit </h3>
+<hr height="10px">
+<form #f = "ngForm" (ngSubmit)="onSubmit(f)">
+<div id="d">
+    <br>
+    <div class="form-group">
+        <label for="motdepasse">
+        ID de produit : 
+        </label>
+       <input type="text" id="id" name="id" [(ngModel)]="id" class="form-control" placeholder="ID"  required class="form-control">
+    </div>
+
+<div [hidden] ="!submitted" id="msg">
+    {{message}}
+    <br><br><br>
+</div>
+<br>
+<div id="d3">
+    <button class="btn btn-primary"  [disabled]="f.invalid">Supprimer</button>
+    <button class="btn btn-success"  [disabled]="f.invalid" type="submit" [routerLink]="['/accueil']">Vérifier</button>
+
+    <button type="reset"  class="btn btn-danger">Annuler</button>
+</div>
+</div>
+</form>
+<footer style="position: relative;top: 200px;text-align: center;">Created by Emna&Maïssa Copyright © 2019 </footer>
+

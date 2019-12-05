@@ -1,0 +1,52 @@
+<form #frm="ngForm" (ngSubmit)="recherche(frm)">
+    <div class="container h-100">
+            <div class="d-flex justify-content-center h-100">
+              <div class="searchbar">
+ <input type="text" name="ch" [(ngModel)]="chaine" #identif="ngModel" class="search_input" placeholder="Search by id.." >
+<a class="search_icon" (click)="recherche(frm)"  > <span class="glyphicon glyphicon-search"></span></a>
+</div>
+</div>
+</div>
+<br>
+
+<div *ngIf="identif.touched else sol2 ">
+<div *ngIf="rech1 !='' else sol1" >
+  
+      
+  <div class="headshot headshot-1 card mb-2 c7"  (mouseleave)="cal(rech1)">
+  <img class="card-img-top" [src]="rech1.im1" class="img-thumbnail" >
+  <div class="card-body">
+    <h4 class="card-title font-weight-bold">{{rech1.nom}}</h4>
+    <p class="card-text" [ngClass]="'c1'">Prix en DT : {{rech1.prix}}</p>
+       <p [ngClass]="rech1.dispo =='disponible' ? 'c2' : 'c3'">{{rech1.dispo}}</p>
+       <p class="card-text" [ngClass]="'c1'">{{rech1.typeoption}}</p>
+     
+    <pre><button type="button" class="btn btn-danger" (click)="ajouter(t)">+Stock</button> <button type="button" class="btn btn-info" (click)="oncli(rech1)" >Détails</button> <button type="button" class="btn btn-success" [disabled]='!rech1.option' (click)="opti1(rech1,'tv')"  >Option</button></pre>
+
+  </div>
+  </div>
+  </div>
+  <ng-template #sol1 >  <p [ngClass]="'c6'">Produit inéxistant !!</p> </ng-template>
+
+</div>
+    <div class="card-group">
+      <td *ngFor="let t of produits">
+        
+<div class="headshot headshot-1 card mb-2"  (mouseleave)="cal(t)">
+<img class="card-img-top" [src]="t.im1" class="img-thumbnail" >
+<div class="card-body">
+  <p class="card-title font-weight-bold"> {{t.nom}}</p>
+  <p class="card-text" [ngClass]="'c1'"> ID :{{t.id}}</p>
+  <p class="card-text" [ngClass]="'c1'">Prix en DT : {{t.prix}}</p>
+     <p [ngClass]="t.dispo =='Disponible' ? 'c2' : 'c3'">{{t.dispo}}</p>
+     <p class="card-text" [ngClass]="'c1'">{{t.tp}}</p>
+   
+  <pre><button type="button" class="btn btn-danger" (click)="ajouter(t)">+Stock</button> <button type="button" class="btn btn-info" (click)="oncli(t)" >Détails</button> <button type="button" class="btn btn-success" [disabled]='!t.option' (click)="opti1(t,'tv')"  >Option</button></pre>
+</div>
+
+</div>
+</div>
+<br>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d50793.44818541531!2d9.8264846656323!3d37.28113628654715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2stn!4v1574879152526!5m2!1sfr!2stn" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+             
+         
